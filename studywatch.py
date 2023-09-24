@@ -68,15 +68,15 @@ class App(ct.CTk):
     results = self.cursor.fetchall()
 
   def CalculateSession(self):
-    timer_value = self.timebox_entry.get()
+    timer_value = self.timebox_entry.get() * 60
     if timer_value <= 0:
       return[]
     
     segments = []
-    while timer_value >= 30:
-      segments.append(25)
-      segments.append(5)
-      timer_value -= 30
+    while timer_value >= 30*60:
+      segments.append(25*60)
+      segments.append(5*60)
+      timer_value -= 30*60
 
     if timer_value > 0:
       segments.append(timer_value)
