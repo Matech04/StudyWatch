@@ -5,6 +5,7 @@ import sqlite3 as sql
 import datetime 
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import winsound
 
 class App(ct.CTk):
     
@@ -164,6 +165,7 @@ class App(ct.CTk):
         
         if time == -1:
           print("Stage Finished")
+          winsound.PlaySound("dong", winsound.SND_FILENAME)
 
           if stage == stages[0]:
             self.AddSession()
